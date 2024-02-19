@@ -185,6 +185,7 @@ nav {
 .projects__projects h3 {
     color: var(--accent);
 }
+
 .project__links>a {
     text-decoration: underline;
 }
@@ -193,4 +194,34 @@ nav {
     margin-top: 1rem;
 }
 
+.contacts {
+    background: var(--primary-light);
+    text-align: center;
+}
 
+.contacts>div {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contacts>div:first-of-type {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.contacts__contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    padding: 0.25rem 1.5rem;
+    background: var(--primary-dark);
+    color: var(--accent);
+}
+
+.contacts__contacts>svg {
+    color: #d1d5db;
+    width: 1.75rem;
+}
