@@ -32,6 +32,7 @@ h1>span {
 h2 {
     font-size: 1.75rem;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 img {
@@ -177,11 +178,9 @@ nav {
     background: var(--primary-light);
     padding-left: 2rem;
     padding-right: 2rem;
-}
-
-.projects__projects article>div:first-child,
-.projects__projects article img {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .projects__projects h3 {
@@ -196,6 +195,22 @@ nav {
     margin-top: 1rem;
 }
 
+.project__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 1rem;
+    align-items: end;
+}
+.project__tags>small {
+    color: var(--text);
+    background-color: var(--primary-darker);
+    font-weight: 500;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    text-align: center;
+
+}
 .contacts {
     background: var(--primary-light);
     text-align: center;
@@ -272,7 +287,7 @@ footer>small {
     p,
     a,
     button {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
     }
 
     .contacts__contacts>svg,
