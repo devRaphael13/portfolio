@@ -70,8 +70,6 @@ section {
     justify-content: center;
 }
 
-
-
 nav {
     display: flex;
     justify-content: center;
@@ -253,4 +251,41 @@ footer {
 
 footer>small {
     color: var(--text);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+    .skills__skills svg {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p,
+    a,
+    button {
+        font-size: 0.75rem;
+    }
+
+    .contacts__contacts>svg,
+    .to_the_top>svg {
+        width: 1.5rem;
+    }
+
+    .to_the_top>svg {
+        height: 1.5rem;
+    }
+
+    .to_the_top {
+        right: 1.5rem;
+    }
+
 }
