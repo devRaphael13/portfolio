@@ -70,6 +70,8 @@ section {
     justify-content: center;
 }
 
+
+
 nav {
     display: flex;
     justify-content: center;
@@ -203,6 +205,7 @@ nav {
 
 .contacts>div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
@@ -241,4 +244,13 @@ nav {
 .to_the_top>svg {
     width: 2rem;
     height: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer>small {
+    color: var(--text);
 }
