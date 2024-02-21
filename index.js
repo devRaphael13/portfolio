@@ -18,10 +18,10 @@ function projects() {
         },
         {
             name: "Real Estate App",
-            description: "A Real Estate Website",
+            description: "A Real Estate company website",
             live_link: "https://django-home-agent-app.vercel.app/",
             repo_link: "https://github.com/devRaphael13/Django_home_agent_app",
-            tags: ["django", "python"],
+            tags: ["django", "python", "TailwindCSS"],
         },
     ];
 
@@ -127,8 +127,8 @@ const observer = new IntersectionObserver((element) => {
     });
 });
 
-const allH2 = document.querySelectorAll("h2");
-
+let allH2 = document.querySelectorAll("h2");
+allH2 = Array.from(allH2).slice(1)
 for (let h2 of allH2) {
     observer.observe(h2)
 }
