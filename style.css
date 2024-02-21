@@ -49,6 +49,11 @@ button {
     margin: 0;
     padding: 0;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 small {
@@ -72,10 +77,35 @@ section {
 }
 
 nav {
+    position: fixed;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 2rem;
+    background: var(--primary-darker);
+    padding: 1rem;
+    border-radius: 2rem;
+    top: 80%;
+    right: 40%;
+    opacity: 0.7;
+    z-index: 1;
+    animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+}
+
+.active {
+    border-bottom: 2px solid var(--accent);
 }
 
 /* Hero Section  */
@@ -167,6 +197,12 @@ nav {
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.skills__skills article:hover,
+.projects__projects article:hover {
+    transform: scale(1.1)
 }
 
 .skills__skills svg {
@@ -202,6 +238,7 @@ nav {
     margin-top: 1rem;
     align-items: end;
 }
+
 .project__tags>small {
     color: var(--text);
     background-color: var(--primary-darker);
@@ -211,6 +248,7 @@ nav {
     text-align: center;
 
 }
+
 .contacts {
     background: var(--primary-light);
     text-align: center;
@@ -303,4 +341,24 @@ footer>small {
         right: 1.5rem;
     }
 
+}
+
+/* Animations  */
+.expand {
+    animation: expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

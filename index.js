@@ -18,7 +18,7 @@ function projects() {
         },
         {
             name: "Real Estate App",
-            description: "Real Estate Website",
+            description: "A Real Estate Website",
             live_link: "https://django-home-agent-app.vercel.app/",
             repo_link: "https://github.com/devRaphael13/Django_home_agent_app",
             tags: ["django", "python"],
@@ -65,7 +65,7 @@ function skills() {
             svg: `<svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.533 12.246c-.011 1.985 1.445 3.168 3.768 2.63V9.615c-2.352-.716-3.758.733-3.768 2.63Zm3.839-10.238h3.199V17.15c-3.066.5-6.004.819-8.104-.355-2.705-1.513-2.923-6.32-.782-8.46C6.77 7.25 8.955 6.486 11.3 6.985V2.222c-.006-.101-.012-.202.07-.214ZM19.76 5.35h-3.2V2.008h3.2V5.35Z"></path>
                     <path d="M19.761 7.047c-.003 2.356-.003 4.048-.003 6.91-.136 2.814-.104 5.053-1.135 6.399-.203.266-.634.652-.995.924-.303.228-.88.69-1.208.71-.33.022-1.18-.458-1.564-.64-.505-.236-.97-.552-1.493-.71 1.218-.753 2.372-1.32 2.844-2.843.41-1.326.355-3.247.355-5.12 0-1.848.01-3.997.01-5.63h3.19Z"></path>
-                </svg>`
+                </svg>`,
         },
 
         {
@@ -85,20 +85,50 @@ function skills() {
 
     allSkills.forEach((skill) => {
         result = result.concat(addSkill(skill));
-    })
-    skillsDiv.innerHTML = result
+    });
+    skillsDiv.innerHTML = result;
 }
 
-function addSkill({name, svg}) {
+function addSkill({ name, svg }) {
     return `<article>
                 ${svg}
                 <h3>${name}</h3>
-            </article>`
+            </article>`;
+}
+
+function nav() {
+    const navLinks = document.getElementsByClassName("nav");
+    let active = navLinks[0];
+    for (let link of navLinks) {
+        link.addEventListener("click", (e) => {
+            if (active) active.classList.toggle("active");
+            link.classList.toggle("active");
+            active = link;
+        });
+    }
 }
 
 function main() {
+    nav();
     skills();
     projects();
 }
 
 main();
+
+const observer = new IntersectionObserver((element) => {
+    element.forEach((h2) => {
+        if (h2.isIntersecting) {
+            h2.target.classList.add("expand");
+            return
+        }
+
+        h2.target.classList.remove("expand")
+    });
+});
+
+const allH2 = document.querySelectorAll("h2");
+
+for (let h2 of allH2) {
+    observer.observe(h2)
+}
