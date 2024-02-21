@@ -170,6 +170,10 @@ nav {
     max-width: 300px;
 }
 
+.hero__about>h2 {
+    text-align: center;
+}
+
 /* Skills Section  */
 
 .skills {
@@ -275,6 +279,11 @@ nav {
     padding: 0.25rem 1.5rem;
     background: var(--primary-dark);
     color: var(--accent);
+    transition: transform 0.2s ease-in-out;
+}
+
+.contacts__contacts:hover {
+    transform: scale(1.1)
 }
 
 .contacts__contacts>svg {
