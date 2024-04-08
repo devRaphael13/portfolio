@@ -3,10 +3,17 @@ function projects() {
     let result = "";
     const allProjects = [
         {
-            name: "Ecommerce Website API",
+            name: "Ecommerce Website",
+            description: "The Ecommerce frontend for consuming data from the API",
+            live_link: "https://django-ecommerce-api.vercel.app/",
+            repo_link: "https://ecommerce-devraphael13.vercel.app/",
+            tags: ["react", "javascript"],
+        },
+        {
+            name: "Ecommerce Website",
             description: "An API backend for storing products and handling payments",
             live_link: "https://django-ecommerce-api.vercel.app/",
-            repo_link: "https://github.com/devRaphael13/Django-ecommerce-api",
+            repo_link: "https://github.com/devRaphael13/ecommerce",
             tags: ["django", "django-rest-framwork", "python", "redis"],
         },
         {
@@ -120,15 +127,15 @@ const observer = new IntersectionObserver((element) => {
     element.forEach((h2) => {
         if (h2.isIntersecting) {
             h2.target.classList.add("expand");
-            return
+            return;
         }
 
-        h2.target.classList.remove("expand")
+        h2.target.classList.remove("expand");
     });
 });
 
 let allH2 = document.querySelectorAll("h2");
-allH2 = Array.from(allH2).slice(1)
+allH2 = Array.from(allH2).slice(1);
 for (let h2 of allH2) {
-    observer.observe(h2)
+    observer.observe(h2);
 }
